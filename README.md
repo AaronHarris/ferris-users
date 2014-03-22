@@ -46,6 +46,10 @@ You need to add some custom settings to your app.
 
 Copy the contents of `custom_auth/settings.py` to the bottom of `app/settings.py`.
 
+Because this plugin sends emails, you also need to set the `sender` address in `settings['email']`, or else Ferris won't send emails.
+
+This can be the email address of a registered admin, your apps address `xxx@{YOUR_APP_ID}.appspotmail.com` or a domain address you have associated with your account.
+
 ####4. Using the plugin
 
 The following routes are automatically available:
