@@ -88,6 +88,19 @@ The following variables are available in your controller:
 - `self.auth()`: Returns the webapp2 authentication provider
 
 
+####6. Testing on localhost
+
+In production the plugin sends unique *account activation* and *password reset* links via email.
+
+In development the emails don't get sent, but the links get logged so you can use them.
+
+Example:
+
+1. Register at `/register`
+2. Open GoogleAppEngineLauncher, click **Logs**.
+3. Find one in the format: `confirmation_url: http://localhost:8080/activation/xxx/xxx`
+4. Paste the addressin your browser, and your account will be activated
+
 ###How it works
 
 Tutorials:
