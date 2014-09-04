@@ -5,6 +5,6 @@
 {% block submit_text %}Update Email{% endblock %}
 
 {% block form_fields %}
-<input type="hidden" name="_csrf_token" value="{{csrf_token()}}">
+{{csrf}}
 {{ super() }}
 {% endblock %}

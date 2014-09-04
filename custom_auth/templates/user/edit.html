@@ -10,7 +10,7 @@
 
 <form method="POST" action="{{this.uri(_pass_all=True)}}" class="form" enctype="application/x-www-form-urlencoded" role="form">
 
-    <input type="hidden" name="_csrf_token" value="{{csrf_token()}}">
+    {{csrf}}
 
     <div class="form-group">
         <label>Email</label>
@@ -64,7 +64,7 @@
                         {% if used_providers|length > 1 or local_account %}
                         <td>
                             <form id="delete_social" action="{{uri('user:remove_social_login', provider_name=provider.name)}}" method="post"  provider="{{provider.name}}" >
-                                <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+                                {{csrf}}
                                 <button class="btn btn-danger btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span> Remove</button>
                             </form>
                         </td>

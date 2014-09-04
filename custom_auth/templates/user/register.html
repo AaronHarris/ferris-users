@@ -9,7 +9,7 @@
 
 <form method="POST" action="{{this.uri(_pass_all=True)}}" class="form" enctype="application/x-www-form-urlencoded" role="form">
 
-    <input type="hidden" name="_csrf_token" value="{{csrf_token()}}">
+    {{csrf}}
 
     {% block form_fields %}
         {% for field in form %}

@@ -40,7 +40,7 @@ Login
 
 <form method="POST" action="{{this.uri(_pass_all=True)}}" class="form-horizontal" enctype="application/x-www-form-urlencoded" role="form">
 
-  <input type="hidden" name="_csrf_token" value="{{csrf_token()}}">
+  {{csrf}}
 
   {{ f.form_field(form, form['email'], horizontal=True,  placeholder="Email") }}
   {{ f.form_field(form, form['password'], horizontal=True,  placeholder='Password') }}

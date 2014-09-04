@@ -21,7 +21,7 @@ This plugin provides the following features:
 This plugin has some dependencies for certain functionality. Install the following plugins in your app:
 
 - [ferris-recaptcha](https://github.com/robertdodd/ferris-recaptcha) - Uses this captcha plugin to protect against password-reset spamming.
-- [ferris-csrf](https://github.com/robertdodd/ferris-csrf) - Uses this plugin to protect against cross-site request forgery.
+- ferris-csrf is no longer required, as csrf functionality is now built into Ferris
 
 ###Get started
 If you have not done so already, [Download the Ferris Framework](https://bitbucket.org/cloudsherpas/ferris-framework/get/master.zip) and read the [Getting Started](http://ferris-framework.appspot.com/docs/getting_started.html) guide.

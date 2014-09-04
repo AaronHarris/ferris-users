@@ -7,7 +7,7 @@ from ferris import Controller, scaffold, settings, route_with, route, add_author
 from ferris.components.flash_messages import FlashMessages
 from ferris.core import mail
 from google.appengine.api import users
-from plugins.csrf.components import csrf
+from ferris.components import csrf
 from plugins.recaptcha.components import recaptcha
 from webapp2_extras.appengine.auth.models import Unique
 from webapp2_extras.auth import InvalidAuthIdError, InvalidPasswordError
@@ -67,7 +67,7 @@ class RegisterForm(wtforms.Form):
 class User(Controller):
     class Meta:
         components = (custom_auth.CustomAuth, csrf.CSRF, FlashMessages,  scaffold.Scaffolding, recaptcha.Recaptcha)
-        authorizations = (csrf.require_csrf_for_post,)
+        authorizations = (csrf.require_csrf,)
 
     @route_with('/login')
     @add_authorizations(custom_auth.require_not_user)
@@ -844,7 +844,7 @@ class User(Controller):
             try:
                 user_info = self.user()
                 auth_id = "email:%s" % user_info.email
-                
+
                 # Password to SHA512
                 old_password = utils.hashing(old_password, settings.get('salt'))
 
